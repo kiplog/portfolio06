@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio 06</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+      integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section id="home" class="home">
+        <div class="intro">
+          <h1>Home</h1>
+          <p>Intro text about me.</p>
+        </div>
+
+        <div class="top-box top-box-hourly">
+          <h2>Hourly Rate</h2>
+          <p class="price">$80/hour</p>
+          <a class="btn" href="#contact">Book Now</a>
+        </div>
+
+        <div class="top-box top-box-day">
+          <h2>Day Rate</h2>
+          <p class="price">$500/hour plus beer</p>
+          <a class="btn" href="#contact">Book Now</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <h1>About</h1>
+        <p>Intro text about what I do.</p>
+      </section>
+
+      <section id="work" class="work">
+        <h1>Work</h1>
+        <div class="portfolio">
+          <figure>
+            <img src="http://fillmurray.com/400/400" alt="" />
+          </figure>
+          <figure>
+            <img src="http://source.unsplash.com/random/300x300" alt="" />
+          </figure>
+          <figure>
+            <img src="http://source.unsplash.com/random/300x300" alt="" />
+          </figure>
+          <figure>
+            <img src="http://source.unsplash.com/random/300x300" alt="" />
+          </figure>
+          <figure>
+            <img src="http://source.unsplash.com/random/300x300" alt="" />
+          </figure>
+          <figure>
+            <img src="http://source.unsplash.com/random/300x300" alt="" />
+          </figure>
+        </div>
+
+        <div class="videos">
+          <figure>
+            <video controls>
+              <source src="http://paulmccann.com/webdev/videocastcast.m4v" />
+              <source src="http://paulmccann.com/webdev/videocastcast.webm" />
+              <p>your browser is to old</p>
+            </video>
+          </figure>
+
+          <figure>
+            <video controls>
+              <source src="http://paulmccann.com/webdev/videocastcast.m4v" />
+              <source src="http://paulmccann.com/webdev/videocastcast.webm" />
+              <p>your browser is to old</p>
+            </video>
+          </figure>
+          <figure>
+            <video controls>
+              <source src="http://paulmccann.com/webdev/videocastcast.m4v" />
+              <source src="http://paulmccann.com/webdev/videocastcast.webm" />
+              <p>your browser is to old</p>
+            </video>
+          </figure>
+
+          <figure>
+            <video controls>
+              <source src="http://paulmccann.com/webdev/videocastcast.m4v" />
+              <source src="http://paulmccann.com/webdev/videocastcast.webm" />
+              <p>your browser is to old</p>
+            </video>
+          </figure>
+
+          <figure>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/oxYl2tzaYmk"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </figure>
+        </div>
+
+        <div class="stage">
+          <video id="player">
+            <source src="http://paulmccann.com/webdev/videocastcast.m4v" />
+            <source src="http://paulmccann.com/webdev/videocastcast.webm" />
+            <p>your browser is to old</p>
+          </video>
+
+          <button
+            class="play"
+            onclick="document.getElementById('player').play()"
+          >
+            <i class="fas fa-play"></i>
+          </button>
+
+          <button
+            class="pause"
+            onclick="document.getElementById('player').pause()"
+          >
+            PAUSE
+          </button>
+
+          <button
+            class="volup"
+            onclick="document.getElementById('player').volume += .1"
+          >
+            Volume Up
+          </button>
+          <button
+            class="voldown"
+            onclick="document.getElementById('player').volume -= .1"
+          >
+            Volume Down
+          </button>
+        </div>
+      </section>
+      <section id="contact">
+        <h1>Contact</h1>
+        <p>Hire me please.</p>
+        <form action="">
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="put in your name" />
+          <label for="email">Email</label>
+          <input type="Email" name="email" placeholder="put in your email" />
+          <label for="feedback">Comments:</label>
+          <textarea
+            name="feedback"
+            id="feedback"
+            cols="30"
+            rows="10"
+            placeholder="any comments?"
+          ></textarea>
+          <button type="submit" class="btn-submit">Send!</button>
+        </form>
+      </section>
+      <footer>Copyright</footer>
+    </div>
+  </body>
+</html>

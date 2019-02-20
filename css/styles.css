@@ -1,0 +1,299 @@
+/* 
+Author: Paul McCann 
+Contact: paul@paulmccann.com
+*/
+
+:root {
+  --primary: #fff;
+  --light: #eee;
+  --shad: 0 1px 5px #444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 100% arial;
+  background: #ddd;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  position: sticky;
+
+  background: #000;
+  color: var(--light);
+}
+
+section {
+  height: 100vh;
+  padding: 2rem;
+  border-bottom: 5px solid black;
+}
+
+.work {
+  height: auto;
+  min-height: 100vh;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  justify-items: stretch;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    position: sticky;
+    width: 100%;
+
+    bottom: 0;
+  }
+  nav ul {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+nav li {
+  border: 0px solid white;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: var(--shad);
+}
+
+nav a:hover {
+  color: #ddd;
+  letter-spacing: 0.05em;
+}
+
+.home {
+  display: grid;
+  grid-template-areas:
+    "intro intro top-box-day"
+    "intro intro top-box-hourly";
+}
+
+#home:target {
+  padding-top: 20vh;
+}
+
+@media (max-width: 600px) {
+  .home {
+    grid-template-areas:
+      "intro"
+      "top-box-hourly"
+      "top-box-day";
+  }
+}
+
+.intro {
+  grid-area: intro;
+  background-image: url(http://source.unsplash.com/random/900x700);
+  background-image: url(http://fillmurray.com/900/700);
+  background-size: cover;
+  background-position: 60%;
+  background-repeat: no-repeat;
+  background-color: #00f;
+  background-blend-mode: saturation;
+}
+
+.top-box-hourly {
+  grid-area: top-box-hourly;
+}
+.top-box-day {
+  grid-area: top-box-day;
+}
+
+.intro,
+.top-box {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.btn {
+  background: #000;
+  color: white;
+  padding: 0.75em 1em;
+  border-radius: 8px;
+}
+
+.btn a {
+  text-decoration: none;
+}
+
+.home div {
+  border: 1px solid black;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 0px;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+}
+
+form {
+  display: grid;
+  grid-template-areas:
+    "label1 input1 input1"
+    "label2 input2 input2"
+    "label3 feedback feedback"
+    ". . btn";
+  grid-gap: 15px;
+}
+
+label {
+  margin-top: 1em;
+  border: 0px solid black;
+  text-align: right;
+}
+label:nth-child(1) {
+  grid-area: label1;
+}
+label[for="email"] {
+  grid-area: label2;
+}
+label[for="feedback"] {
+  grid-area: label3;
+}
+
+input {
+  padding: 1.5em;
+}
+
+input[name="name"] {
+  grid-area: input1;
+}
+input[name="email"] {
+  grid-area: input2;
+}
+
+textarea {
+  padding: 1.5em;
+  grid-area: feedback;
+}
+
+.btn-submit {
+  padding: 1.5em;
+  background: yellow;
+  grid-area: btn;
+}
+
+.videos {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  align-items: center;
+}
+
+.videos video,
+iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stage {
+  margin-top: 30px;
+  position: relative;
+}
+
+.stage video {
+  border: 1px solid black;
+}
+
+.stage button {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+}
+
+.stage .play {
+  left: 10px;
+}
+.stage .pause {
+  left: 100px;
+}
+.stage .volup {
+  left: 200px;
+}
+.stage .voldown {
+  left: 300px;
+}
+
+.audio.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 18px;
+  width: 9px;
+  height: 7px;
+  border-left: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  border-bottom: solid 1px currentColor;
+  border-radius: 0 0 50% 50%;
+
+  transform: scale(2);
+}
+
+.audio.icon:before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: -6px;
+  width: 5px;
+  height: 10px;
+  border: solid 1px currentColor;
+  border-radius: 4px;
+  transform: scale(2);
+}
+
+.audio.icon:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: -4px;
+  width: 1px;
+  height: 4px;
+  background-color: currentColor;
+  transform: scale(2);
+}
+
+.fa-play {
+  fill: blue;
+  color: blue;
+}
